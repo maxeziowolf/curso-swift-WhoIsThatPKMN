@@ -1,13 +1,20 @@
+
 # ¿Quién es ese Pokémon?
 
-Este es el repositorio base de la aplicación que construiremos durante el curso de Swift con Storyboards. 
-Asegurate de clonarlo para poder continuar con el proyecto.
 
-Si quieres retarte a ti misma creando el layout para la aplicación, aquí tienes el [Figma de referencia](https://www.figma.com/file/GvarU7mYsWZ7VjJH07wDpO/Who-is-that-pokemon?node-id=0%3A1) para cada una de las interfaces que se van a desarrollar las puedas replicar y practicar.
+Este repositorio es un fork del [repositorio original](https://github.com/platzi/curso-swift-WhoIsThatPKMN), el cual presenta la base del proyecto **"¿Quién es ese Pokémon?"**. Este proyecto es un juego donde tienes que adivinar que Pokémon es el que se está mostrando en pantalla. Acumulas puntos con cada respuesta correcta y pierdes el juego cuando te equivoques de Pokémon. 
 
-![Pokemon Game](https://i.imgur.com/Rdll2KU.png)
+**Estas son las capturas iniciales del proyecto:** 
+
+![Pokemon Game](https://s12.gifyu.com/images/Captura-de-pantalla-2023-05-20-a-las-0.04.01.png)
+
+  
 
 ## Licencia
+
 > Este proyecto esta creado baja la licencia MIT.
 
+  
+## Colaboradores
 Hecho con 💚 por [alexcamachogz](https://twitter.com/alexcamachogz)
+Y continuado por [Maxeziowolf](https://github.com/maxeziowolf)
