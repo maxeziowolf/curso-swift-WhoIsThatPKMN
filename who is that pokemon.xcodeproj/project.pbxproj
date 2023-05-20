@@ -14,6 +14,13 @@
 		039F9E072898214F00B69144 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039F9E052898214F00B69144 /* Main.storyboard */; };
 		039F9E092898214F00B69144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 039F9E082898214F00B69144 /* Assets.xcassets */; };
 		039F9E0C2898214F00B69144 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039F9E0A2898214F00B69144 /* LaunchScreen.storyboard */; };
+		D3532F4E2A18A162004194DB /* PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F4D2A18A162004194DB /* PokemonData.swift */; };
+		D3532F502A18A16D004194DB /* Pokemon Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F4F2A18A16D004194DB /* Pokemon Manager.swift */; };
+		D3532F522A18A17F004194DB /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F512A18A17F004194DB /* PokemonModel.swift */; };
+		D3532F542A18A18C004194DB /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F532A18A18C004194DB /* ImageData.swift */; };
+		D3532F562A18A19B004194DB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F552A18A19B004194DB /* ImageManager.swift */; };
+		D3532F582A18A1A9004194DB /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F572A18A1A9004194DB /* ImageModel.swift */; };
+		D3532F5A2A18A1B9004194DB /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F592A18A1B9004194DB /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +32,13 @@
 		039F9E082898214F00B69144 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		039F9E0B2898214F00B69144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		039F9E0D2898214F00B69144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3532F4D2A18A162004194DB /* PokemonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonData.swift; sourceTree = "<group>"; };
+		D3532F4F2A18A16D004194DB /* Pokemon Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pokemon Manager.swift"; sourceTree = "<group>"; };
+		D3532F512A18A17F004194DB /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
+		D3532F532A18A18C004194DB /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		D3532F552A18A19B004194DB /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		D3532F572A18A1A9004194DB /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		D3532F592A18A1B9004194DB /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +72,54 @@
 		039F9DFE2898214F00B69144 /* who is that pokemon */ = {
 			isa = PBXGroup;
 			children = (
+				D3532F5D2A18A211004194DB /* Project */,
+				D3532F4C2A18A147004194DB /* Model */,
+				D3532F5B2A18A1CC004194DB /* View */,
+				D3532F5C2A18A1FD004194DB /* Controller */,
+			);
+			path = "who is that pokemon";
+			sourceTree = "<group>";
+		};
+		D3532F4C2A18A147004194DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D3532F4D2A18A162004194DB /* PokemonData.swift */,
+				D3532F4F2A18A16D004194DB /* Pokemon Manager.swift */,
+				D3532F512A18A17F004194DB /* PokemonModel.swift */,
+				D3532F532A18A18C004194DB /* ImageData.swift */,
+				D3532F552A18A19B004194DB /* ImageManager.swift */,
+				D3532F572A18A1A9004194DB /* ImageModel.swift */,
+				D3532F592A18A1B9004194DB /* GameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D3532F5B2A18A1CC004194DB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				039F9E0A2898214F00B69144 /* LaunchScreen.storyboard */,
+				039F9E052898214F00B69144 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D3532F5C2A18A1FD004194DB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				039F9E032898214F00B69144 /* PokemonViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D3532F5D2A18A211004194DB /* Project */ = {
+			isa = PBXGroup;
+			children = (
 				039F9DFF2898214F00B69144 /* AppDelegate.swift */,
 				039F9E012898214F00B69144 /* SceneDelegate.swift */,
-				039F9E032898214F00B69144 /* PokemonViewController.swift */,
-				039F9E052898214F00B69144 /* Main.storyboard */,
-				039F9E0A2898214F00B69144 /* LaunchScreen.storyboard */,
 				039F9E082898214F00B69144 /* Assets.xcassets */,
 				039F9E0D2898214F00B69144 /* Info.plist */,
 			);
-			path = "who is that pokemon";
+			path = Project;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +204,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				039F9E042898214F00B69144 /* PokemonViewController.swift in Sources */,
+				D3532F522A18A17F004194DB /* PokemonModel.swift in Sources */,
 				039F9E002898214F00B69144 /* AppDelegate.swift in Sources */,
+				D3532F562A18A19B004194DB /* ImageManager.swift in Sources */,
+				D3532F582A18A1A9004194DB /* ImageModel.swift in Sources */,
+				D3532F5A2A18A1B9004194DB /* GameModel.swift in Sources */,
 				039F9E022898214F00B69144 /* SceneDelegate.swift in Sources */,
+				D3532F502A18A16D004194DB /* Pokemon Manager.swift in Sources */,
+				D3532F4E2A18A162004194DB /* PokemonData.swift in Sources */,
+				D3532F542A18A18C004194DB /* ImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
