@@ -32,8 +32,8 @@ class PokemonViewController: UIViewController {
     }
     
     
-    @IBAction func buttomPressed(_ sender: Any) {
-        
+    @IBAction func buttomPressed(_ sender: UIButton) {
+        print("Se preciono: \(sender.title(for: .normal) ?? "Esta vacio")")
     }
     
     

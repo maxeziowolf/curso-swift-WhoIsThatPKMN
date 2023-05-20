@@ -15,7 +15,7 @@
 		039F9E092898214F00B69144 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 039F9E082898214F00B69144 /* Assets.xcassets */; };
 		039F9E0C2898214F00B69144 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 039F9E0A2898214F00B69144 /* LaunchScreen.storyboard */; };
 		D3532F4E2A18A162004194DB /* PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F4D2A18A162004194DB /* PokemonData.swift */; };
-		D3532F502A18A16D004194DB /* Pokemon Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F4F2A18A16D004194DB /* Pokemon Manager.swift */; };
+		D3532F502A18A16D004194DB /* PokemonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F4F2A18A16D004194DB /* PokemonManager.swift */; };
 		D3532F522A18A17F004194DB /* PokemonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F512A18A17F004194DB /* PokemonModel.swift */; };
 		D3532F542A18A18C004194DB /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F532A18A18C004194DB /* ImageData.swift */; };
 		D3532F562A18A19B004194DB /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3532F552A18A19B004194DB /* ImageManager.swift */; };
@@ -33,7 +33,7 @@
 		039F9E0B2898214F00B69144 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		039F9E0D2898214F00B69144 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3532F4D2A18A162004194DB /* PokemonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonData.swift; sourceTree = "<group>"; };
-		D3532F4F2A18A16D004194DB /* Pokemon Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pokemon Manager.swift"; sourceTree = "<group>"; };
+		D3532F4F2A18A16D004194DB /* PokemonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonManager.swift; sourceTree = "<group>"; };
 		D3532F512A18A17F004194DB /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 		D3532F532A18A18C004194DB /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		D3532F552A18A19B004194DB /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				D3532F4D2A18A162004194DB /* PokemonData.swift */,
-				D3532F4F2A18A16D004194DB /* Pokemon Manager.swift */,
+				D3532F4F2A18A16D004194DB /* PokemonManager.swift */,
 				D3532F512A18A17F004194DB /* PokemonModel.swift */,
 				D3532F532A18A18C004194DB /* ImageData.swift */,
 				D3532F552A18A19B004194DB /* ImageManager.swift */,
@@ -210,7 +210,7 @@
 				D3532F582A18A1A9004194DB /* ImageModel.swift in Sources */,
 				D3532F5A2A18A1B9004194DB /* GameModel.swift in Sources */,
 				039F9E022898214F00B69144 /* SceneDelegate.swift in Sources */,
-				D3532F502A18A16D004194DB /* Pokemon Manager.swift in Sources */,
+				D3532F502A18A16D004194DB /* PokemonManager.swift in Sources */,
 				D3532F4E2A18A162004194DB /* PokemonData.swift in Sources */,
 				D3532F542A18A18C004194DB /* ImageData.swift in Sources */,
 			);
@@ -361,7 +361,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5JW72G9KXS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "who is that pokemon/Info.plist";
+				INFOPLIST_FILE = "who is that pokemon/Project/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -391,7 +391,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5JW72G9KXS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "who is that pokemon/Info.plist";
+				INFOPLIST_FILE = "who is that pokemon/Project/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
