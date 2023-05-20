@@ -17,40 +17,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="bg9-sU-a4y" userLabel="Container">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="bg9-sU-a4y" userLabel="Container">
                                 <rect key="frame" x="20" y="67" width="350" height="723"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="s4G-r7-xx6" userLabel="Header">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="101.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="97"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Quién es este Pokémon?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-A7-Pzx">
-                                                <rect key="frame" x="26.333333333333343" y="0.0" width="297.33333333333326" height="40.666666666666664"/>
+                                                <rect key="frame" x="26.333333333333343" y="0.0" width="297.33333333333326" height="38.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puntaje: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXW-d2-WIl">
-                                                <rect key="frame" x="129.33333333333334" y="60.666666666666671" width="91.666666666666657" height="40.666666666666671"/>
+                                                <rect key="frame" x="129.33333333333334" y="58.333333333333329" width="91.666666666666657" height="38.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XiA-V9-6bd" userLabel="Pokemon">
-                                        <rect key="frame" x="0.0" y="161.33333333333334" width="350" height="284.66666666666663"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="748" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="XiA-V9-6bd" userLabel="Pokemon">
+                                        <rect key="frame" x="0.0" y="157" width="350" height="289"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pikachu" translatesAutoresizingMaskIntoConstraints="NO" id="KuH-Tb-DHX">
-                                                <rect key="frame" x="60.333333333333329" y="0.0" width="229.33333333333337" height="229.66666666666666"/>
+                                                <rect key="frame" x="80.666666666666686" y="0.0" width="188.66666666666663" height="188.66666666666666"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="KuH-Tb-DHX" secondAttribute="height" id="2hk-go-l9q"/>
+                                                    <constraint firstAttribute="width" secondItem="KuH-Tb-DHX" secondAttribute="height" multiplier="1:1" id="XhT-p0-LAk"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Sí, es un Pikachu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwc-BK-jXE">
-                                                <rect key="frame" x="93.000000000000014" y="249.66666666666663" width="164.33333333333337" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="NeF-OM-kJr"/>
-                                                </constraints>
+                                                <rect key="frame" x="93" y="208.66666666666669" width="164.33333333333337" height="80.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -115,6 +112,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="XiA-V9-6bd" firstAttribute="height" secondItem="bg9-sU-a4y" secondAttribute="height" multiplier="0.4" id="3Al-El-OVx"/>
                                     <constraint firstItem="zCz-0i-hvb" firstAttribute="height" secondItem="bg9-sU-a4y" secondAttribute="height" multiplier="0.3" id="Ypb-pi-8WN"/>
                                 </constraints>
                             </stackView>
@@ -150,29 +148,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="BNQ-84-Mdm">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="BNQ-84-Mdm">
                                 <rect key="frame" x="20" y="67" width="350" height="723"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¡OOOPS! Perdiste" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m41-OJ-Tlc">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="44.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="97"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AJ5-CI-I9d" userLabel="Pokemon">
-                                        <rect key="frame" x="0.0" y="104.33333333333334" width="350" height="341.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="157" width="350" height="289"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pika" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-yZ-b7O">
-                                                <rect key="frame" x="31.666666666666686" y="0.0" width="286.66666666666669" height="286.66666666666669"/>
+                                                <rect key="frame" x="47.666666666666686" y="0.0" width="255" height="255"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="255" id="5Zf-lh-dJg"/>
                                                     <constraint firstAttribute="width" secondItem="6WK-yZ-b7O" secondAttribute="height" id="eft-eu-YCY"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No, es un Pikachu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Np2-BL-bo9">
-                                                <rect key="frame" x="88.666666666666686" y="306.66666666666663" width="173" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="TyL-Li-mcq"/>
-                                                </constraints>
+                                                <rect key="frame" x="88.666666666666686" y="275" width="173" height="14"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -205,6 +201,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="linkColor"/>
                                 <constraints>
+                                    <constraint firstItem="AJ5-CI-I9d" firstAttribute="height" secondItem="BNQ-84-Mdm" secondAttribute="height" multiplier="0.4" id="Hz7-jO-DT1"/>
                                     <constraint firstItem="Tjw-yP-rE7" firstAttribute="height" secondItem="BNQ-84-Mdm" secondAttribute="height" multiplier="0.3" id="bLT-Ie-mPN"/>
                                 </constraints>
                             </stackView>

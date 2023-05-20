@@ -18,6 +18,7 @@ class PokemonViewController: UIViewController {
     //MARK: Variables
     var pokemon: [PokemonModel] = []
     var correctAnswer: String = ""
+    lazy var game = GameModel()
     
 
     override func viewDidLoad() {
@@ -34,6 +35,8 @@ class PokemonViewController: UIViewController {
             buttom.layer.cornerRadius = 10
             buttom.layer.masksToBounds = false
         }
+        
+        labelScore.text = "Puntaje: \(game.getScore())"
         
     }
     
