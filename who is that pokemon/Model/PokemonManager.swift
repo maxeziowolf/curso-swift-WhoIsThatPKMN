@@ -7,14 +7,23 @@
 
 import Foundation
 
+protocol PokemonManagerDelegate {
+    func didUpdatePokemon(pokemon: [PokemonModel])
+    func didFailWithError(error: Error)
+}
 
 struct PokemonManager {
-    static let pokemonURL: String = "https://pokeapi.co/api/v2/pokemon?limit=980"
+    private static let pokemonURL: String = "https://pokeapi.co/api/v2/pokemon?limit=980"
+    public static var delegate: PokemonManagerDelegate?
     
-    func performRequest(urlString: String){
+    static func fetchPokemon(){
+        performRequest(urlString: PokemonManager.pokemonURL)
+    }
+    
+    private static func performRequest(urlString: String){
         
         //1. Se crea url
-        guard let url = URL(string: PokemonManager.pokemonURL) else{
+        guard let url = URL(string: urlString) else{
             print("No se pudo construir la url 🥲")
             return
         }
@@ -28,17 +37,23 @@ struct PokemonManager {
             
             if let error = error {
                 print("Ocurrio el siguiente error: \(error)")
+                self.delegate?.didFailWithError(error: error)
                 return
             }
             
             guard let safeData = data else{
                 print("Ocurrio el siguiente error al obtener la informacion")
+                self.delegate?.didFailWithError(error: NSError(domain: "No se obtuvo informacion", code: -99))
                 return
             }
             
             if let pokemon = self.parseJSON(pokemonData: safeData){
-                print(pokemon)
+                self.delegate?.didUpdatePokemon(pokemon: pokemon)
+            }else{
+                self.delegate?.didFailWithError(error: NSError(domain: "No se obtuvo informacion", code: -99))
             }
+            
+           
             
         }
         
@@ -47,7 +62,7 @@ struct PokemonManager {
         
     }
     
-    func parseJSON(pokemonData: Data) -> [PokemonModel]? {
+    private static func parseJSON(pokemonData: Data) -> [PokemonModel]? {
         let decoder = JSONDecoder()
         
         do{

@@ -9,16 +9,22 @@ import UIKit
 
 class PokemonViewController: UIViewController {
     
-    //IBOutlets
+    //MARK: IBOutlets
     @IBOutlet weak var labelScore: UILabel!
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var labelMessage: UILabel!
     @IBOutlet var answerButtons: [UIButton]!
     
+    //MARK: Variables
+    var pokemon: [PokemonModel] = []
+    var correctAnswer: String = ""
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupDelegates()
+        PokemonManager.fetchPokemon()
     }
     
     private func setupUI(){
@@ -31,10 +37,60 @@ class PokemonViewController: UIViewController {
         
     }
     
+    private func setupDelegates(){
+        
+        //Configuracion de botones
+        PokemonManager.delegate = self
+        ImageManager.delegate = self
+        
+    }
+    
     
     @IBAction func buttomPressed(_ sender: UIButton) {
         print("Se preciono: \(sender.title(for: .normal) ?? "Esta vacio")")
     }
     
+}
+
+extension PokemonViewController: PokemonManagerDelegate{
     
+    func didUpdatePokemon(pokemon: [PokemonModel]) {
+        
+        self.pokemon = pokemon
+        
+        let randomPokemon = pokemon.getFourRandomElements()
+        
+        for i in 0..<randomPokemon.count{
+            DispatchQueue.main.async { [weak self] in
+                self?.answerButtons[i].setTitle(randomPokemon[i].name.capitalized, for: .normal)
+            }
+        }
+        
+        let randomAnswer = Int.random(in: 0...3)
+        correctAnswer = randomPokemon[randomAnswer].name
+        
+        ImageManager.fetchPokemon(urlString: randomPokemon[randomAnswer].imageURL)
+        
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+}
+
+extension PokemonViewController: ImageManagerDelegate {
+    
+    func didUpdateImage(imageModel: ImageModel) {
+        print(imageModel)
+    }
+    
+}
+
+extension Array {
+    func getFourRandomElements() -> Array {
+        let shuffledArray = self.shuffled()
+        let result = Array(shuffledArray.prefix(4))
+        return result
+    }
 }
