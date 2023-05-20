@@ -41,13 +41,13 @@
                                         <rect key="frame" x="0.0" y="161.33333333333334" width="350" height="284.66666666666663"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pikachu" translatesAutoresizingMaskIntoConstraints="NO" id="KuH-Tb-DHX">
-                                                <rect key="frame" x="60.333333333333314" y="0.0" width="229.33333333333337" height="229.66666666666666"/>
+                                                <rect key="frame" x="60.333333333333329" y="0.0" width="229.33333333333337" height="229.66666666666666"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="KuH-Tb-DHX" secondAttribute="height" id="2hk-go-l9q"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="748" text="Sí, es un Pikachu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zwc-BK-jXE">
-                                                <rect key="frame" x="93" y="249.66666666666663" width="164.33333333333337" height="35"/>
+                                                <rect key="frame" x="93.000000000000014" y="249.66666666666663" width="164.33333333333337" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="NeF-OM-kJr"/>
                                                 </constraints>
@@ -69,6 +69,9 @@
                                                 <state key="normal" title="Flaaffy">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UNK-KF-AXq"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O95-M6-Fow">
                                                 <rect key="frame" x="0.0" y="59.333333333333371" width="350" height="39.333333333333343"/>
@@ -78,6 +81,9 @@
                                                 <state key="normal" title="Staravia">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CEQ-7a-kKR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8P-Tu-ouw">
                                                 <rect key="frame" x="0.0" y="118.66666666666663" width="350" height="39"/>
@@ -87,6 +93,9 @@
                                                 <state key="normal" title="Carvanha">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYa-iw-97I"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7F-7Q-PUE">
                                                 <rect key="frame" x="0.0" y="177.66666666666663" width="350" height="39.333333333333343"/>
@@ -96,6 +105,9 @@
                                                 <state key="normal" title="Pikachu">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="buttomPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Dj-EW-wwi"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,6 +128,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bg9-sU-a4y" secondAttribute="trailing" constant="20" id="jMr-M4-wfQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelMessage" destination="zwc-BK-jXE" id="Qce-3t-9a4"/>
+                        <outlet property="labelScore" destination="mXW-d2-WIl" id="Ho4-JL-6WB"/>
+                        <outlet property="pokemonImage" destination="KuH-Tb-DHX" id="6SC-wY-F7u"/>
+                        <outletCollection property="answerButtons" destination="YPE-G3-QOR" collectionClass="NSMutableArray" id="dHm-Jk-bao"/>
+                        <outletCollection property="answerButtons" destination="O95-M6-Fow" collectionClass="NSMutableArray" id="1Nm-uU-jVf"/>
+                        <outletCollection property="answerButtons" destination="s8P-Tu-ouw" collectionClass="NSMutableArray" id="tjQ-CO-jaB"/>
+                        <outletCollection property="answerButtons" destination="W7F-7Q-PUE" collectionClass="NSMutableArray" id="kej-mf-AwH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
