@@ -72,6 +72,7 @@ class PokemonViewController: UIViewController {
         
         let randomAnswer = Int.random(in: 0...3)
         correctAnswer = randomPokemon[randomAnswer].name
+        print(correctAnswer)
         
         ImageManager.fetchPokemon(urlString: randomPokemon[randomAnswer].imageURL)
     }
@@ -140,6 +141,7 @@ extension PokemonViewController: PokemonManagerDelegate{
         
         let randomAnswer = Int.random(in: 0...3)
         correctAnswer = randomPokemon[randomAnswer].name
+        print(correctAnswer)
         
         ImageManager.fetchPokemon(urlString: randomPokemon[randomAnswer].imageURL)
         
