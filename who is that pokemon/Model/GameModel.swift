@@ -9,6 +9,7 @@ import Foundation
 
 struct GameModel{
     private var score = 0
+    private var liveCount = 4
     
     // Revisar respuesta correcta
     mutating func checkAnswer(_ userAnswer: String, _ correctAnswer: String) -> Bool {
@@ -17,6 +18,8 @@ struct GameModel{
         
         if checkAnswer{
             score += 10
+        }else{
+            liveCount -= 1
         }
         
         return checkAnswer
@@ -28,6 +31,14 @@ struct GameModel{
     
     mutating func setScrore(score: Int){
         self.score = score
+    }
+    
+    func getLiveCount()-> Int{
+        return liveCount
+    }
+    
+    mutating func setLive(liveCount: Int){
+        self.liveCount = liveCount
     }
     
     
