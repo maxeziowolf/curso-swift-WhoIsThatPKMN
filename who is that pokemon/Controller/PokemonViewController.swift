@@ -15,6 +15,10 @@ class PokemonViewController: UIViewController {
     @IBOutlet weak var pokemonImage: UIImageView!
     @IBOutlet weak var labelMessage: UILabel!
     @IBOutlet var answerButtons: [UIButton]!
+    @IBOutlet weak var containerStack: UIStackView!
+    
+    //MARK: Constrains
+    @IBOutlet weak var firstContentConstraint: NSLayoutConstraint!
     
     //MARK: Variables
     var pokemon: [PokemonModel] = []
@@ -30,6 +34,46 @@ class PokemonViewController: UIViewController {
         PokemonManager.fetchPokemon()
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        //Este metodo se ejecutara justo antes de empezar la configuraicon para rotar el dispositivo.
+        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            let interfaceOrientation = windowScene.interfaceOrientation
+            switch interfaceOrientation {
+            case .portrait:
+                // La orientación es vertical (retrato)
+                updatePortrairView()
+                break
+            case .landscapeLeft, .landscapeRight:
+                // La orientación es horizontal (paisaje)
+                updateLandscapeView()
+                break
+            default:
+                // Nueva orientación agregada en futuras versiones de iOS
+                print("Ocurrio una situacion no esperada 💻")
+                break
+            }
+        }
+        
+    }
+    
+    private func updateLandscapeView(){
+        
+        containerStack.axis = .horizontal
+        firstContentConstraint.priority = .defaultLow
+        
+    }
+    
+    private func updatePortrairView(){
+        
+        containerStack.axis = .vertical
+        firstContentConstraint.priority = .defaultHigh
+        view.layoutIfNeeded()
+        
+    }
+    
     private func setupUI(){
         
         //Configuracion de botones
@@ -40,6 +84,14 @@ class PokemonViewController: UIViewController {
         
         labelScore.text = "Puntaje: \(game.getScore())"
         labelMessage.text = ""
+        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            let interfaceOrientation = windowScene.interfaceOrientation
+            if interfaceOrientation == .landscapeLeft || interfaceOrientation == .landscapeRight{
+                updateLandscapeView()
+            }
+        }
+        
     }
     
     private func setupDelegates(){
@@ -72,6 +124,7 @@ class PokemonViewController: UIViewController {
         
         let randomAnswer = Int.random(in: 0...3)
         correctAnswer = randomPokemon[randomAnswer].name
+        print(correctAnswer)
         
         ImageManager.fetchPokemon(urlString: randomPokemon[randomAnswer].imageURL)
     }
@@ -140,6 +193,7 @@ extension PokemonViewController: PokemonManagerDelegate{
         
         let randomAnswer = Int.random(in: 0...3)
         correctAnswer = randomPokemon[randomAnswer].name
+        print(correctAnswer)
         
         ImageManager.fetchPokemon(urlString: randomPokemon[randomAnswer].imageURL)
         
