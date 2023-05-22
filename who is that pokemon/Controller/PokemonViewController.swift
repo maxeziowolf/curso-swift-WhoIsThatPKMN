@@ -16,6 +16,7 @@ class PokemonViewController: UIViewController {
     @IBOutlet weak var labelMessage: UILabel!
     @IBOutlet var answerButtons: [UIButton]!
     @IBOutlet weak var containerStack: UIStackView!
+    @IBOutlet weak var liveStack: UIStackView!
     
     //MARK: Constrains
     @IBOutlet weak var firstContentConstraint: NSLayoutConstraint!
@@ -150,7 +151,37 @@ class PokemonViewController: UIViewController {
             setupNewOption(sender)
             
             
+            
+        }else if game.getLiveCount() > 0{
+            
+            let lastHeart = liveStack.arrangedSubviews.last { view in
+                if let imageHeart = view as? UIImageView, imageHeart.image?.pngData() == UIImage(systemName: "heart.fill")?.pngData() {
+                    
+                    UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut]) {
+                        imageHeart.transform = imageHeart.transform.scaledBy(x: 0.1, y: 0.1)
+                    } completion: { _ in
+                        imageHeart.image = UIImage(systemName: "heart")
+                        imageHeart.transform = .identity
+                    }
+
+                    
+                    return true
+                }
+                
+                return false
+            }
+            
+            sender.layer.borderColor = UIColor.red.cgColor
+            sender.layer.borderWidth = 2
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1){[weak self] in
+                self?.setupNewOption(sender)
+            }
+            
+            
         }else{
+            
+
             
             sender.layer.borderColor = UIColor.red.cgColor
             sender.layer.borderWidth = 2
@@ -158,6 +189,15 @@ class PokemonViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){[weak self] in
                 self?.setupNewOption(sender)
                 self?.performSegue(withIdentifier: "goToResult", sender: nil)
+                self?.game.setScrore(score: 0)
+                self?.labelScore.text = "Puntaje: \(self?.game.getScore() ?? 0)"
+                self?.game.setLive(liveCount: 4)
+                
+                self?.liveStack.arrangedSubviews.forEach({ view in
+                    if let imageHeart = view as? UIImageView{
+                        imageHeart.image = UIImage(systemName: "heart.fill")
+                    }
+                })
             }
             
         }
